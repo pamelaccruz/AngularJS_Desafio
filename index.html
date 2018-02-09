@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+	<script src="controller.js"></script>
+	<title>Desafio AngularJS Teste</title>
+	<style>
+		.bg1 {
+			width: 1200px;
+			background-color: #001433;
+			padding-top: 100px;
+			margin-top: 50px;
+			margin-left: 50px;
+			margin-right: 50px;
+		}
+		.bg2 {
+			width: 1170px;
+			min-height: 300px;
+			background-color: #d9d9d9;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+		.bg3 {
+			width: 850px;
+			min-height: 300px;
+			background-color: #ffffff;
+			padding-top: 25px;
+			padding-bottom: 25px;
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-top: -268px;
+			margin-left: 305px;
+		}
+		.ent-dados {
+			width: 810px;
+			background-color: #e6e6e6;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-top: 15px;
+		}
+		input[type=text] {
+			font-family: Arial;
+	    	width: 840px;
+    		box-sizing: border-box;
+    		background-repeat: no-repeat;
+		    border-radius: 5px;
+	    	background-color: #e6e6e6;
+	    	border: #e6e6e6;
+	    	padding-top: 10px;
+	    	padding-bottom: 10px;
+	    	padding-left: 10px;
+	    	padding-right: 10px;
+	    	margin-bottom: 15px;
+    		-webkit-transition: width 0.1s ease-in-out;
+	    	transition: width 0.1s ease-in-out;
+    		font-size: 13px;
+	    }
+	    table {
+		    width: 840px;
+		    margin-top: 25px;
+			background-color: #e6e6e6;
+		}
+		th {
+			background-color: #e6e6e6;
+			font-weight: bold;
+    		font-size: 15px;
+		}
+		th, td {
+			font-family: Arial;
+		    text-align: left;
+    		padding: 8px;
+	    	color: #000a1a;
+		}
+		td {
+    		font-size: 14px;
+		}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+		.button {
+			font-family: Arial;
+			font-weight: bold;
+    		font-size: 16px;
+	    	background-color: #001433;
+    		border-radius: 5px;
+	    	color: white;
+    		text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		    padding-right: 20px;
+		    padding-left: 20px;
+		    margin-left: 710px;
+		    margin-top: 15px;
+    		cursor: pointer;
+		}
+		input[type=text2] {
+    		font-size: 15px;
+			font-family: Arial;
+	    	width: 800px;
+    		box-sizing: border-box;
+		    border-radius: 5px;
+	    	background-color: #ffffff;
+	    	border: #ffffff;
+	    	padding-top: 10px;
+	    	padding-bottom: 10px;
+	    	padding-left: 10px;
+	    	padding-right: 10px;
+	    	margin-bottom: 15px;
+    		-webkit-transition: width 0.1s ease-in-out;
+	    	transition: width 0.1s ease-in-out;
+	    }
+	    select[type=text3] {
+    		font-size: 15px;
+			font-family: Arial;
+	    	width: 200px;
+    		box-sizing: border-box;
+		    border-radius: 5px;
+	    	background-color: #ffffff;
+	    	border: #ffffff;
+	    	padding-top: 10px;
+	    	padding-bottom: 10px;
+	    	padding-left: 10px;
+	    	padding-right: 10px;
+	    	margin-bottom: 15px;
+    		-webkit-transition: width 0.1s ease-in-out;
+	    	transition: width 0.1s ease-in-out;
+	    }
+	    input[type=text4] {
+    		font-size: 15px;
+			font-family: Arial;
+	    	width: 200px;
+    		box-sizing: border-box;
+		    border-radius: 5px;
+	    	background-color: #ffffff;
+	    	border: #ffffff;
+	    	padding-top: 10px;
+	    	padding-bottom: 10px;
+	    	padding-left: 10px;
+	    	padding-right: 10px;
+	    	margin-bottom: 15px;
+    		-webkit-transition: width 0.1s ease-in-out;
+	    	transition: width 0.1s ease-in-out;
+	    }
+	    input[type=text5] {
+    		font-size: 15px;
+			font-family: Arial;
+	    	width: 200px;
+    		box-sizing: border-box;
+		    border-radius: 5px;
+	    	background-color: #ffffff;
+	    	border: #ffffff;
+	    	padding-top: 10px;
+	    	padding-bottom: 10px;
+	    	padding-left: 10px;
+	    	padding-right: 10px;
+	    	margin-bottom: 15px;
+    		-webkit-transition: width 0.1s ease-in-out;
+	    	transition: width 0.1s ease-in-out;
+	    }
+	    .button2 {
+			font-family: Arial;
+			font-weight: bold;
+    		font-size: 16px;
+	    	background-color: #ff0000;
+    		border-radius: 5px;
+	    	color: white;
+    		text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		    padding-right: 20px;
+		    padding-left: 20px;
+		    margin-left: 30px;
+    		cursor: pointer;
+		}
+		.button3 {
+			font-family: Arial;
+			width: 80px;
+			font-weight: bold;
+    		font-size: 16px;
+	    	background-color: #001433;
+    		border-radius: 5px;
+	    	color: white;
+    		text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		    padding-right: 20px;
+		    padding-left: 20px;
+    		cursor: pointer;
+		}
+		.button4 {
+			font-family: Arial;
+			width: 200px;
+			font-weight: bold;
+	    	background-color: #ffffff;
+    		border-radius: 5px;
+	    	color: #000a1a;
+    		text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		    padding-right: 20px;
+		    padding-left: 20px;
+		    margin-left: 30px;
+		    margin-top: 20px;
+    		cursor: pointer;
+    		font-size: 13px;
+		}
+		.button5 {
+			font-family: Arial;
+			width: 200px;
+			font-weight: bold;
+	    	background-color: #000a1a;
+    		border-radius: 5px;
+	    	color: #ffffff;
+    		text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		    padding-right: 20px;
+		    padding-left: 20px;
+		    margin-left: 30px;
+		    margin-top: 20px;
+    		cursor: pointer;
+    		font-size: 13px;
+		}
+		.p1 {
+			font-weight: bold;
+			font-family: Arial;
+			font-size: 15px;
+	    	color: #000a1a;
+		}
+		.p2 {
+			font-weight: bold;
+			font-family: Arial;
+			font-size: 15px;
+	    	color: #000a1a;
+		}
+    </style>
+</head>
+
+<body bgcolor="#e67300">
+	<div class="bg1">
+		<div class="bg2" ng-controller="ListaDadosController" ng-app="T6">
+			<div class="button4" ng-click="sort('nome')">ORDENAR NOME</div>
+			<p></p>
+			<div class="button4" ng-click="sort('dtnascimento')">ORDENAR NASCIMENTO</div>
+			<p></p>
+			<div class="button4" ng-click="Homens='masculino'; Mulheres=''">FILTRO HOMENS</div>
+			<p></p>
+			<div class="button5" ng-click="Mulheres='feminino'; Homens=''">FILTRO MULHERES</div>
+			<div class="bg3">
+				<input type="text" placeholder="QUALQUER COISA BACANA AQUI PARA SER BUSCADA :)" id="text-input" ng-model="searchInput">
+				<table id="table-input" class="display" cellspacing="0">
+					<thead>
+						<tr>
+							<th>NOME</th>
+							<th>DT NASCIMENTO</th>
+							<th>SEXO</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in itens | filter:searchInput | filter:Homens | filter:Mulheres | orderBy:orderProp:direction">
+					    	<td>{{item.nome}}</td>
+					    	<td>{{item.dtnascimento}}</td>
+					    	<td>{{item.sexo}}</td>
+		 				</tr>
+		 			</tbody>
+				</table>
+				<div class="button" id="add-button" ng-click="showMe=true" ng-disabled="disableButton()">ADICIONAR</div>
+				<div class="ent-dados" id="hidden-class" ng-submit="addItem()" ng-show="showMe">
+					<p class="p1">NOME</p>
+					<input type="text2" ng-model="nome">
+					<p class="p2">DT NASCIMENTO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEXO</p>
+					<input type="text5" ng-model="dtnascimento">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select type="text3" class="test" ng-model="sexo">
+						<option>Feminino</option>
+						<option>Masculino</option>
+					</select>
+					<div class="button2" id="cancel-button" ng-click="cancelItem(); showMe=false">CANCELAR</div>
+					<div class="button3" id="save-button" ng-click="addItem()">SALVAR</div>
+					<datepicker date-format="yyyy-MM-dd" selector="form-control">
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
